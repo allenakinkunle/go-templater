@@ -87,11 +87,6 @@ func (t *Templater) Render(wrt http.ResponseWriter, req *http.Request, templateN
 }
 
 func addFilesToTemplates(fsy fs.FS, dirPath, pattern string, tmp *template.Template) error {
-	//subFsy, err := fs.Sub(fsy, dirPath)
-	//if err != nil {
-	//	return err
-	//}
-
 	files, err := fs.Glob(fsy, dirPath+"/"+pattern)
 	if err != nil {
 		return err
